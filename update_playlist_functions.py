@@ -4,8 +4,7 @@
 import update_video_functions
 import argparse
 import os
-from googleapiclient.errors import HttpError
-from google_auth_oauthlib.flow import InstalledAppFlow
+
 
 def add_playlist(youtube, title,description,privacy):
     body = dict(

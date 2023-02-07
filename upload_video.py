@@ -7,12 +7,9 @@ import os
 import random
 import time
 
-import google.oauth2.credentials
-import google_auth_oauthlib.flow
-from googleapiclient.discovery import build
+
 from googleapiclient.errors import HttpError
 from googleapiclient.http import MediaFileUpload
-from google_auth_oauthlib.flow import InstalledAppFlow
 
 
 # Explicitly tell the underlying HTTP transport library not to retry, since
@@ -33,13 +30,7 @@ RETRIABLE_EXCEPTIONS = (httplib2.HttpLib2Error, IOError, http.client.NotConnecte
 RETRIABLE_STATUS_CODES = [500, 502, 503, 504]
 
 
-CLIENT_SECRETS_FILE = 'client_secret.json'
 
-# This OAuth 2.0 access scope allows an application to upload files to the
-# authenticated user's YouTube channel, but doesn't allow other types of access.
-SCOPES = ['https://www.googleapis.com/auth/youtube.upload']
-API_SERVICE_NAME = 'youtube'
-API_VERSION = 'v3'
 
 VALID_PRIVACY_STATUSES = ('public', 'private', 'unlisted')
 
